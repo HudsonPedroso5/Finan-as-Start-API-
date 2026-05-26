@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Entrar — Finanças Start{% endblock %}
+{% block page_title %}Entrar{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <section class="auth-card">
+    <h3>Bem-vindo de volta</h3>
+    <p>Entre com seu e-mail e senha para continuar.</p>
+    <form id="loginForm" class="form-grid">
+      <label>E-mail
+        <input name="email" type="email" placeholder="voce@email.com" required>
+      </label>
+      <label>Senha
+        <input name="senha" type="password" placeholder="••••••••" required>
+      </label>
+      <button class="btn btn-primary w-100" type="submit">Entrar</button>
+    </form>
+    <p class="auth-link">Não tem conta? <a href="{{ url_for('web_bp.signup_page') }}">Criar conta</a></p>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}

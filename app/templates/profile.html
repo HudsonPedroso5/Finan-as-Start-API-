@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Perfil — Finanças Start{% endblock %}
+{% block page_title %}Perfil{% endblock %}
+{% block content %}
+<section class="grid-2">
+  <article class="panel">
+    <div class="profile-box">
+      <div class="avatar" id="profileAvatar">FS</div>
+      <div>
+        <h4 id="profileName">Usuário</h4>
+        <p id="profileEmail">email@exemplo.com</p>
+      </div>
+    </div>
+    <div class="stats-inline">
+      <div><span>Conta</span><strong id="profileCreated">-</strong></div>
+      <div><span>Status</span><strong>Ativa</strong></div>
+    </div>
+  </article>
+
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Editar perfil</h4>
+      <span>Atualize seus dados</span>
+    </div>
+    <form id="profileForm" class="form-grid">
+      <label>Nome
+        <input name="nome" type="text" required>
+      </label>
+      <label>Avatar (letra ou emoji)
+        <input name="avatar" type="text" placeholder="🙂">
+      </label>
+      <button class="btn btn-primary" type="submit">Salvar alterações</button>
+    </form>
+  </article>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}

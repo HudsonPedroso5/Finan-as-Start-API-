@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — Finanças Start{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+{% block content %}
+<section class="stats-grid">
+  <article class="stat-card"><span>Receitas</span><strong id="receitas">R$ 0,00</strong></article>
+  <article class="stat-card"><span>Despesas</span><strong id="despesas">R$ 0,00</strong></article>
+  <article class="stat-card"><span>Saldo</span><strong id="saldo">R$ 0,00</strong></article>
+  <article class="stat-card"><span>Metas ativas</span><strong id="metasAtivas">0</strong></article>
+</section>
+
+<section class="grid-2 mt-4">
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Fluxo financeiro</h4>
+      <span>Receitas x Despesas</span>
+    </div>
+    <canvas id="financeChart" height="220"></canvas>
+  </article>
+
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Transações recentes</h4>
+      <span>Últimos lançamentos</span>
+    </div>
+    <div id="recentTransactions" class="list-stack"></div>
+  </article>
+</section>
+
+<section class="grid-2 mt-4">
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Metas em andamento</h4>
+      <span>Progresso atual</span>
+    </div>
+    <div id="goalPreview" class="list-stack"></div>
+  </article>
+
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Aprendizado rápido</h4>
+      <span>Conteúdo recomendado</span>
+    </div>
+    <div id="contentPreview" class="list-stack"></div>
+  </article>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Finanças Start — Início{% endblock %}
+{% block page_title %}Bem-vindo{% endblock %}
+{% block content %}
+<section class="hero-card">
+  <div>
+    <span class="tag">Projeto acadêmico</span>
+    <h3>Organize seu dinheiro com uma experiência moderna e simples.</h3>
+    <p>Faça cadastro, acompanhe receitas e despesas, crie metas e aprenda educação financeira com uma interface responsiva e bonita.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ url_for('web_bp.signup_page') }}">Criar conta</a>
+      <a class="btn btn-outline-light" href="{{ url_for('web_bp.login_page') }}">Entrar</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="mini-card"><span>Saldo</span><strong>R$ 1.280,00</strong></div>
+    <div class="mini-card"><span>Receitas</span><strong>R$ 2.400,00</strong></div>
+    <div class="mini-card"><span>Despesas</span><strong>R$ 1.120,00</strong></div>
+  </div>
+</section>
+
+<section class="grid-3 mt-4">
+  <article class="info-card"><h4>Controle real</h4><p>Registre entradas e saídas com histórico e organização.</p></article>
+  <article class="info-card"><h4>Metas</h4><p>Acompanhe progresso e veja o quanto falta para alcançar objetivos.</p></article>
+  <article class="info-card"><h4>Aprendizado</h4><p>Conteúdos rápidos para formar hábitos financeiros saudáveis.</p></article>
+</section>
+{% endblock %}

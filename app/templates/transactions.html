@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Transações — Finanças Start{% endblock %}
+{% block page_title %}Transações{% endblock %}
+{% block content %}
+<section class="grid-2">
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Nova transação</h4>
+      <span>Adicione receita ou despesa</span>
+    </div>
+    <form id="transactionForm" class="form-grid">
+      <label>Tipo
+        <select name="tipo" required>
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+      </label>
+      <label>Categoria
+        <input name="categoria" type="text" placeholder="Ex.: alimentação" required>
+      </label>
+      <label>Valor
+        <input name="valor" type="number" min="0" step="0.01" placeholder="0,00" required>
+      </label>
+      <label>Data
+        <input name="data" type="date">
+      </label>
+      <label class="full">Descrição
+        <textarea name="descricao" rows="4" placeholder="Detalhes da transação"></textarea>
+      </label>
+      <button class="btn btn-primary" type="submit">Salvar transação</button>
+    </form>
+  </article>
+
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Resumo</h4>
+      <span>Visão geral</span>
+    </div>
+    <div class="summary-box">
+      <div><span>Receitas</span><strong id="txReceitas">R$ 0,00</strong></div>
+      <div><span>Despesas</span><strong id="txDespesas">R$ 0,00</strong></div>
+    </div>
+    <div id="transactionList" class="list-stack mt-3"></div>
+  </article>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/transactions.js') }}"></script>
+{% endblock %}

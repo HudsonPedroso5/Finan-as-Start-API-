@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Aprender — Finanças Start{% endblock %}
+{% block page_title %}Aprender{% endblock %}
+{% block content %}
+<section class="panel">
+  <div class="panel-head">
+    <h4>Educação financeira</h4>
+    <span>Conteúdos rápidos e úteis</span>
+  </div>
+  <div id="contentList" class="learning-grid"></div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/learn.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ code }} — Finanças Start</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-app">
+  <div class="error-page">
+    <h1>{{ code }}</h1>
+    <p>{{ message }}</p>
+    <a class="btn btn-primary" href="{{ url_for('web_bp.home') }}">Voltar ao início</a>
+  </div>
+</body>
+</html>

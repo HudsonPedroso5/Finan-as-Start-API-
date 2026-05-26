@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Metas — Finanças Start{% endblock %}
+{% block page_title %}Metas{% endblock %}
+{% block content %}
+<section class="grid-2">
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Nova meta</h4>
+      <span>Defina seu objetivo</span>
+    </div>
+    <form id="goalForm" class="form-grid">
+      <label>Título
+        <input name="titulo" type="text" placeholder="Ex.: novo notebook" required>
+      </label>
+      <label>Valor meta
+        <input name="valor_meta" type="number" step="0.01" min="0" required>
+      </label>
+      <label>Valor atual
+        <input name="valor_atual" type="number" step="0.01" min="0" value="0">
+      </label>
+      <label>Prazo
+        <input name="prazo" type="date" required>
+      </label>
+      <label class="full">Descrição
+        <textarea name="descricao" rows="4" placeholder="Explique a meta"></textarea>
+      </label>
+      <button class="btn btn-primary" type="submit">Salvar meta</button>
+    </form>
+  </article>
+
+  <article class="panel">
+    <div class="panel-head">
+      <h4>Metas criadas</h4>
+      <span>Acompanhe o progresso</span>
+    </div>
+    <div id="goalList" class="list-stack"></div>
+  </article>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/goals.js') }}"></script>
+{% endblock %}

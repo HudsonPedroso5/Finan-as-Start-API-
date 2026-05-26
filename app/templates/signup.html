@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Cadastro — Finanças Start{% endblock %}
+{% block page_title %}Cadastro{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <section class="auth-card">
+    <h3>Criar conta</h3>
+    <p>Comece a organizar seu dinheiro em poucos segundos.</p>
+    <form id="registerForm" class="form-grid">
+      <label>Nome
+        <input name="nome" type="text" placeholder="Seu nome" required>
+      </label>
+      <label>E-mail
+        <input name="email" type="email" placeholder="voce@email.com" required>
+      </label>
+      <label>Senha
+        <input name="senha" type="password" placeholder="Mínimo 6 caracteres" required>
+      </label>
+      <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
+    </form>
+    <p class="auth-link">Já tem conta? <a href="{{ url_for('web_bp.login_page') }}">Entrar</a></p>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}
